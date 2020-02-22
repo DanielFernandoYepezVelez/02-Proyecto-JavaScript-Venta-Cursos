@@ -1,0 +1,18 @@
+{
+  "name": "03-proyectouniversidad",
+  "version": "1.0.0",
+  "description": "Proyecto con Sass Gulp y FlexBox",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Fernando Yepez Velez",
+  "license": "ISC",
+  "devDependencies": {},
+  "browsersList": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "dependencies": {},
+  "keywords": []
+}
