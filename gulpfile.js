@@ -15,6 +15,11 @@ function css() {
         .pipe(gulp.dest('./public/css/'));
 }
 
+function watchFiles() {
+    gulp.watch('./dev/scss/*.scss', css);
+    gulp.watch('./public/index.html');
+}
 
 // Registrar funciones como tareas
-gulp.task('css', css)
+gulp.task('css', css);
+gulp.task('watch', gulp.parallel(watchFiles));

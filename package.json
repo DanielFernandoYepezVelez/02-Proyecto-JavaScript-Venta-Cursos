@@ -8,7 +8,11 @@
   },
   "author": "Daniel Fernando Yepez Velez",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-sass": "^4.0.2"
+  },
   "browsersList": [
     "> 1%",
     "last 2 versions"

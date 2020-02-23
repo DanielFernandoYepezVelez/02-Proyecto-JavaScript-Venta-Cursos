@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="" content="Daniel Fernando Yepez Velez" />
-    <meta name="" content="This is a static page with Sass, Gulp, npm, CSS3" />
-    <meta name="" content="HTML5, CSS3, GULP, SASS, NodeJS, NPM" />
+    <meta name="author" content="Daniel Fernando Yepez Velez" />
+    <meta name="description" content="This is a static page with Sass, Gulp, npm, CSS3" />
+    <meta name="keywords" content="HTML5, CSS3, GULP, SASS, NodeJS, NPM" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Universidad Project</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css" />
@@ -15,13 +15,22 @@
 </head>
 
 <body>
+    <!-- Header Start -->
     <header id="header" class="header contenedor">
+        <!-- Logo Start -->
         <div class="logo">
-            <img src="img/logo.jpg" id="logo" />
+            <img src="./assets/img/logo.jpg" id="logo" />
         </div>
+        <!-- Logo End -->
+
+        <!-- Carrito Start -->
         <div class="carrito-compras">
-            <img src="img/cart.png" class="img-carrito" />
-            <div class="contenido" class="oculto">
+            <!-- Logo Carrito Start -->
+            <img src="./assets/img/cart.png" class="img-carrito" />
+            <!-- Logo Carrito End -->
+
+            <!--  -->
+            <div class="contenido oculto">
                 <table id="lista-carrito" class="">
                     <thead>
                         <tr>
@@ -33,7 +42,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                <img src="img/curso1.jpg" />
+                                <img src="./assets/img/curso1.jpg" />
                             </td>
                             <td>CSS Grid y Flexbox Construye + 10 Proyectos</td>
                             <td>$15</td>
@@ -42,11 +51,12 @@
                 </table>
                 <a href="#" class="boton">Vaciar Carrito</a>
             </div>
-            <!--#carrito-->
         </div>
-        <!--.carrito-->
+        <!--Carrito End-->
     </header>
+    <!-- Header End -->
 
+    <!-- Hero Start -->
     <div class="hero">
         <div class="contenido-hero contenedor">
             <h2>Aprende algo nuevo</h2>
@@ -57,8 +67,9 @@
             </form>
         </div>
     </div>
-    <!--#hero-->
+    <!--Hero End-->
 
+    <!-- Aside Start -->
     <div class="barra">
         <div class="iconos contenedor">
             <div class="icono icono1">
@@ -78,16 +89,17 @@
             </div>
         </div>
     </div>
+    <!-- Aside End -->
 
     <h1 class="encabezado centrado">Cursos En Línea</h1>
 
     <div class="cursos contenedor">
         <div class="curso">
-            <img class="imagen-curso" src="img/curso1.jpg" />
+            <img class="imagen-curso" src="./assets/img/curso1.jpg" />
             <div class="info-curso">
                 <h4>HTML5, CSS3, JavaScript para Principiantes</h4>
                 <p>Juan Pedro</p>
-                <img src="img/estrellas.png" />
+                <img src="./assets/img/estrellas.png" />
                 <div class="precio">
                     <p class="regular">$200</p>
                     <p class="oferta">$15</p>
@@ -97,11 +109,11 @@
         </div>
         <!--.curso-->
         <div class="curso">
-            <img class="imagen-curso" src="img/curso2.jpg" />
+            <img class="imagen-curso" src="./assets/img/curso2.jpg" />
             <div class="info-curso">
                 <h4>Curso de Comida Vegetariana</h4>
                 <p>Juan Pedro</p>
-                <img src="img/estrellas.png" />
+                <img src="./assets/img/estrellas.png" />
                 <div class="precio">
                     <p class="regular">$200</p>
                     <p class="oferta">$15</p>
@@ -111,33 +123,33 @@
         </div>
         <!--.curso-->
         <div class="curso">
-            <img class="imagen-curso" src="img/curso3.jpg" />
+            <img class="imagen-curso" src="./assets/img/curso3.jpg" />
             <div class="info-curso">
                 <h4>Guitarra para Principiantes</h4>
                 <p>Juan Pedro</p>
-                <img src="img/estrellas.png" />
+                <img src="./assets/img/estrellas.png" />
                 <p class="precio">$200 <span>$15</span></p>
                 <a href="#" class="boton" data-id="3">Agregar Al Carrito</a>
             </div>
         </div>
         <!--.curso-->
         <div class="curso">
-            <img class="imagen-curso" src="img/curso4.jpg" />
+            <img class="imagen-curso" src="./assets/img/curso4.jpg" />
             <div class="info-curso">
                 <h4>Huerto en tu casa</h4>
                 <p>Juan Pedro</p>
-                <img src="img/estrellas.png" />
+                <img src="./assets/img/estrellas.png" />
                 <p class="precio">$200 <span>$15</span></p>
                 <a href="#" class="boton" data-id="4">Agregar Al Carrito</a>
             </div>
         </div>
         <!--.curso-->
         <div class="curso">
-            <img class="imagen-curso" src="img/curso5.jpg" />
+            <img class="imagen-curso" src="./assets/img/curso5.jpg" />
             <div class="info-curso">
                 <h4>Decoración con productos de tu hogar</h4>
                 <p>Juan Pedro</p>
-                <img src="img/estrellas.png" />
+                <img src="./assets/img/estrellas.png" />
                 <div class="precio">
                     <p class="regular">$200</p>
                     <p class="oferta">$15</p>
@@ -147,11 +159,11 @@
         </div>
         <!--.curso-->
         <div class="curso">
-            <img class="imagen-curso" src="img/curso1.jpg" />
+            <img class="imagen-curso" src="./assets/img/curso1.jpg" />
             <div class="info-curso">
                 <h4>Diseño Web para Principiantes</h4>
                 <p>Juan Pedro</p>
-                <img src="img/estrellas.png" />
+                <img src="./assets/img/estrellas.png" />
                 <div class="precio">
                     <p class="regular">$200</p>
                     <p class="oferta">$15</p>
@@ -161,11 +173,11 @@
         </div>
         <!--.card-->
         <div class="curso">
-            <img class="imagen-curso" src="img/curso2.jpg" />
+            <img class="imagen-curso" src="./assets/img/curso2.jpg" />
             <div class="info-curso">
                 <h4>Comida Mexicana para principiantes</h4>
                 <p>Juan Pedro</p>
-                <img src="img/estrellas.png" />
+                <img src="./assets/img/estrellas.png" />
                 <div class="precio">
                     <p class="regular">$200</p>
                     <p class="oferta">$15</p>
@@ -175,11 +187,11 @@
         </div>
         <!--.curso-->
         <div class="curso">
-            <img class="imagen-curso" src="img/curso3.jpg" />
+            <img class="imagen-curso" src="./assets/img/curso3.jpg" />
             <div class="info-curso">
                 <h4>Estudio Musical en tu casa</h4>
                 <p>Juan Pedro</p>
-                <img src="img/estrellas.png" />
+                <img src="./assets/img/estrellas.png" />
                 <div class="precio">
                     <p class="regular">$200</p>
                     <p class="oferta">$15</p>
@@ -189,11 +201,11 @@
         </div>
         <!--.curso-->
         <div class="curso">
-            <img class="imagen-curso" src="img/curso4.jpg" />
+            <img class="imagen-curso" src="./assets/img/curso4.jpg" />
             <div class="info-curso">
                 <h4>Cosecha tus propias frutas y verduras</h4>
                 <p>Juan Pedro</p>
-                <img src="img/estrellas.png" />
+                <img src="./assets/img/estrellas.png" />
                 <div class="precio">
                     <p class="regular">$200</p>
                     <p class="oferta">$15</p>
@@ -203,11 +215,11 @@
         </div>
         <!--.curso-->
         <div class="curso">
-            <img class="imagen-curso" src="img/curso5.jpg" />
+            <img class="imagen-curso" src="./assets/img/curso5.jpg" />
             <div class="info-curso">
                 <h4>Prepara galletas caseras</h4>
                 <p>Juan Pedro</p>
-                <img src="img/estrellas.png" />
+                <img src="./assets/img/estrellas.png" />
                 <div class="precio">
                     <p class="regular">$200</p>
                     <p class="oferta">$15</p>
@@ -217,11 +229,11 @@
         </div>
         <!--.curso-->
         <div class="curso">
-            <img class="imagen-curso" src="img/curso1.jpg" />
+            <img class="imagen-curso" src="./assets/img/curso1.jpg" />
             <div class="info-curso">
                 <h4>JavaScript Moderno con ES6</h4>
                 <p>Juan Pedro</p>
-                <img src="img/estrellas.png" />
+                <img src="./assets/img/estrellas.png" />
                 <div class="precio">
                     <p class="regular">$200</p>
                     <p class="oferta">$15</p>
@@ -231,11 +243,11 @@
         </div>
         <!--.curso-->
         <div class="curso">
-            <img class="imagen-curso" src="img/curso2.jpg" />
+            <img class="imagen-curso" src="./assets/img/curso2.jpg" />
             <div class="info-curso">
                 <h4>100 Recetas de Comida Natural</h4>
                 <p>Juan Pedro</p>
-                <img src="img/estrellas.png" />
+                <img src="./assets/img/estrellas.png" />
                 <div class="precio">
                     <p class="regular">$200</p>
                     <p class="oferta">$15</p>
@@ -247,6 +259,7 @@
     </div>
     <!--.cursos-->
 
+    <!-- Footer Start -->
     <footer id="footer" class="footer">
         <div class="contenedor">
             <div class="contenedor-footer">
@@ -263,10 +276,9 @@
                     <a class="enlace" href="#">Blog</a>
                 </nav>
             </div>
-            <!--.contenedor-footer-->
         </div>
-        <!--.contenedor-->
     </footer>
+    <!-- Footer End -->
 </body>
 
 </html>
