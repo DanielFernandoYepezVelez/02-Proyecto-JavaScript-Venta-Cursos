@@ -1,0 +1,20 @@
+.footer {
+    border-top: 1px solid $color_gris;
+    @include gradient($color_secundario, $color_terciario);
+    height: auto;
+    .contenedor-footer {
+        display: flex;
+        flex-direction: column;
+        @include telefono() {
+            flex-direction: row;
+        }
+    }
+}
+
+.menu {
+    @include menus();
+}
+
+.enlace.diferente {
+    margin-bottom: 0;
+}

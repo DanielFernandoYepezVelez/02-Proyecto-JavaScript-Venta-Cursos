@@ -9,6 +9,7 @@
 /* Background-Fondo */
 /* Distancia-Texto */
 /* PSEUDOCLASE hover */
+/* Menu Footer */
 /* Mixins Media Querys */
 /*ESTOS MIXINS NO REQUIREN
 PARENTESIS PORQUE LA VARIABLE SE
@@ -41,12 +42,10 @@ body {
 .contenedor {
   max-width: 1100px;
   margin: 0 auto;
-  border: solid 1px black;
 }
 
 .header {
   display: flex;
-  border: solid 1px fuchsia;
   justify-content: space-between;
   align-items: center;
 }
@@ -59,13 +58,11 @@ body {
   position: relative;
   margin: 0 1rem;
   cursor: pointer;
-  border: solid yellow 3px;
 }
 
 .carrito-compras:hover .contenido.oculto {
   display: block;
   position: absolute;
-  border: 2px green dotted;
   right: 0;
   background-color: #f2f2f2;
   padding: 1rem;
@@ -77,12 +74,13 @@ body {
 }
 
 .carrito-compras:hover .contenido.oculto .boton {
-  background-color: #741d51;
-  padding: 0.5rem 1rem;
+  background-color: #33c3f0;
+  padding: 0.8rem 1rem;
   display: block;
   text-align: center;
   text-decoration: none;
-  color: #e44e52;
+  font-size: 1.2rem;
+  color: #ffffff;
 }
 
 .contenido.oculto {
@@ -159,7 +157,6 @@ body {
 .barra {
   display: flex;
   min-height: 7rem;
-  border: 1px solid blue;
   color: #ffffff;
   background: linear-gradient(to right, #741d51 0%, #e44e52 100%);
 }
@@ -168,7 +165,6 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  border: 1px solid white;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -185,7 +181,6 @@ body {
   align-items: center;
   min-height: 3.5rem;
   background-size: 2rem;
-  border: solid yellow 1px;
 }
 
 @media only screen and (min-width: 320px) {
@@ -261,6 +256,7 @@ body {
   text-align: center;
 }
 
+/* CODIGO IMPORTANTE ESTILO CARDS */
 .cursos {
   display: flex;
   flex-wrap: wrap;
@@ -269,6 +265,8 @@ body {
 
 .cursos .curso {
   flex: 1 0 100%;
+  margin-bottom: 1rem;
+  border: 2px solid #f2f2f2;
 }
 
 .cursos .curso .imagen-curso {
@@ -277,7 +275,7 @@ body {
 
 @media only screen and (min-width: 480px) {
   .cursos .curso {
-    flex: 1 0 49%;
+    flex: 0 1 calc(50% - 1rem);
   }
 }
 
@@ -291,4 +289,79 @@ body {
   .cursos .curso {
     flex: 0 1 calc(25% - 1rem);
   }
+}
+
+.info-curso {
+  padding: 1rem;
+}
+
+.info-curso h4 {
+  font-size: 1.2rem;
+}
+
+.info-curso .precio {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-curso .precio .regular {
+  text-decoration: line-through;
+  color: red;
+}
+
+.info-curso .precio .oferta {
+  font-size: 2rem;
+  font-weight: 500;
+  color: green;
+}
+
+.info-curso .boton {
+  background-color: #33c3f0;
+  padding: 0.8rem 1rem;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.footer {
+  border-top: 1px solid #f2f2f2;
+  background: linear-gradient(to right, #741d51 0%, #e44e52 100%);
+  height: auto;
+}
+
+.footer .contenedor-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 480px) {
+  .footer .contenedor-footer {
+    flex-direction: row;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+@media only screen and (min-width: 1024px) {
+  .menu {
+    flex: 0 1 calc(30% - 1rem);
+  }
+}
+
+.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.4rem;
+  margin-bottom: .5rem;
+}
+
+.enlace.diferente {
+  margin-bottom: 0;
 }

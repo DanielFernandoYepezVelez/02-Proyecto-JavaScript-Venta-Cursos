@@ -1,14 +1,12 @@
 .barra {
     display: flex;
     min-height: 7rem;
-    border: 1px solid blue;
     color: #ffffff;
     @include gradient($color_secundario, $color_terciario);
     .iconos {
         flex: 1;
         display: flex;
         flex-direction: column;
-        border: 1px solid white;
         @include desktop() {
             flex-direction: row;
             align-items: center;
@@ -20,7 +18,6 @@
             align-items: center;
             min-height: 3.5rem;
             background-size: 2rem;
-            border: solid yellow 1px;
             @include iphone() {
                 background-position: 3% center !important;
                 &.icono1 {

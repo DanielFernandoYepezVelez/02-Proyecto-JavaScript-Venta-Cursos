@@ -11,10 +11,11 @@
 
 @mixin boton($background_color_mixin, $font_color_mixin) {
     background-color: $background_color_mixin;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1rem;
     display: block;
     text-align: center;
     text-decoration: none;
+    font-size: 1.2rem;
     color: $font_color_mixin;
 }
 
@@ -48,6 +49,25 @@
 @mixin box-border($color-borde) {
     border-color: $color-borde;
     border-width: 1.2%;
+}
+
+
+/* Menu Footer */
+
+@mixin menus() {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    flex: 1;
+    @include desktop() {
+        flex: 0 1 calc(30% - 1rem);
+    }
+    a {
+        color: $color_blanco;
+        text-decoration: none;
+        font-size: 1.4rem;
+        margin-bottom: .5rem;
+    }
 }
 
 
