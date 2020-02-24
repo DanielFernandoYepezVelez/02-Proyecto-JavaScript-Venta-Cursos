@@ -1,0 +1,73 @@
+.barra {
+    display: flex;
+    min-height: 7rem;
+    border: 1px solid blue;
+    color: #ffffff;
+    @include gradient($color_secundario, $color_terciario);
+    .iconos {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid white;
+        @include desktop() {
+            flex-direction: row;
+            align-items: center;
+        }
+        .icono {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 3.5rem;
+            background-size: 2rem;
+            border: solid yellow 1px;
+            @include iphone() {
+                background-position: 3% center !important;
+                &.icono1 {
+                    p,
+                    span {
+                        @include texto-distancia(block, 50px);
+                    }
+                }
+                &.icono2 {
+                    p,
+                    span {
+                        @include texto-distancia(block, 25px);
+                    }
+                }
+                &.icono3 {
+                    p,
+                    span {
+                        @include texto-distancia(block, -42px);
+                    }
+                }
+            }
+            @include telefono() {
+                background-position: 7% center !important;
+            }
+            @include tablet() {
+                background-position: 10% center !important;
+            }
+            @include desktop() {
+                background-position: left center !important;
+            }
+            &.icono1 {
+                @include background-image('../assets/img/icono1.png');
+            }
+            &.icono2 {
+                @include background-image('../assets/img/icono2.png');
+                p,
+                span {
+                    @include texto-distancia(block, -5.5% !important);
+                }
+            }
+            &.icono3 {
+                @include background-image('../assets/img/icono3.png');
+                p,
+                span {
+                    @include texto-distancia(block, -32% !important);
+                }
+            }
+        }
+    }
+}

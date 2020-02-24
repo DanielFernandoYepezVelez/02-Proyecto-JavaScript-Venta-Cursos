@@ -1,68 +1,8 @@
-/* VARIABLES COLORES */
-
-$principal: #33c3f0;
-$gris: #e1e1e1;
-$blanco: #ffffff;
-
-/* 01-StylesGeneral.scss */
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-
-/* 02-StyleContenedor.scss */
-
-.contenedor {
-    max-width: 1100px;
-    margin: 0 auto;
-    border: solid 1px black;
-}
-
-
-/* 03-StyleHeader.scss */
-
-.header {
-    display: flex;
-    border: solid 1px fuchsia;
-    justify-content: space-between;
-    align-items: center;
-    .logo {
-        padding: 1.4rem;
-    }
-}
-
-// Ampersan para evitar espacios en blanco
-.carrito-compras {
-    position: relative;
-    cursor: pointer;
-    border: solid yellow 3px;
-    &:hover .contenido.oculto {
-        display: block;
-        position: absolute;
-        border: 2px green dotted;
-        right: 0;
-        background-color: $gris;
-        padding: 1rem;
-        max-width: 400px;
-        img {
-            max-width: 150px;
-        }
-        .boton {
-            background-color: $principal;
-            padding: 0.5rem 1rem;
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            color: $blanco;
-        }
-    }
-}
-
-.contenido.oculto {
-    display: none;
-}
+@import '01-Variables';
+@import '02-Mixins';
+@import '03-GeneralStyles';
+@import '04-ContainerStyles';
+@import '05-HeaderStyles';
+@import '06-Hero';
+@import '07-Aside';
+@import '08-MainContent';

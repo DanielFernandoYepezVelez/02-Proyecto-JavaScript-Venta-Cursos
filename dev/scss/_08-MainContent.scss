@@ -1,0 +1,24 @@
+.centrado {
+    text-align: center;
+}
+
+.cursos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .curso {
+        flex: 1 0 100%;
+        .imagen-curso {
+            width: 100%;
+        }
+        @include telefono() {
+            flex: 1 0 49%;
+        }
+        @include tablet() {
+            flex: 0 1 calc(33% - 1rem);
+        }
+        @include desktop() {
+            flex: 0 1 calc(25% - 1rem);
+        }
+    }
+}

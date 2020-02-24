@@ -1,0 +1,98 @@
+/* Box-Model/Box-Sizing */
+
+@mixin box-model($margin, $padding, $box-sizing) {
+    margin: $margin;
+    padding: $padding;
+    box-sizing: $box-sizing;
+}
+
+
+/* Bottoms */
+
+@mixin boton($background_color_mixin, $font_color_mixin) {
+    background-color: $background_color_mixin;
+    padding: 0.5rem 1rem;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: $font_color_mixin;
+}
+
+
+/* Background-Img */
+
+@mixin background-image($rutaImagen) {
+    background-image: url($rutaImagen);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+/* Background-Fondo */
+
+@mixin gradient($color1, $color2) {
+    background: linear-gradient(to right, $color1 0%, $color2 100%);
+}
+
+
+/* Distancia-Texto */
+
+@mixin texto-distancia($display, $distancia) {
+    display: $display;
+    text-indent: $distancia !important;
+}
+
+
+/* PSEUDOCLASE hover */
+
+@mixin box-border($color-borde) {
+    border-color: $color-borde;
+    border-width: 1.2%;
+}
+
+
+/* Mixins Media Querys */
+
+
+/*ESTOS MIXINS NO REQUIREN
+PARENTESIS PORQUE LA VARIABLE SE
+INYECTA DE FORMA DIRECTA CON LA 
+SIGUIENTE SYNTAX:
+#{$telefono}
+ */
+
+
+/* Telefono Muy pequeño */
+
+@mixin iphone {
+    @media only screen and (min-width: #{$iphone}) {
+        @content;
+    }
+}
+
+
+/* Telefono */
+
+@mixin telefono {
+    @media only screen and (min-width: #{$telefono}) {
+        @content;
+    }
+}
+
+
+/* Tablet */
+
+@mixin tablet {
+    @media only screen and (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+
+/* Desktop */
+
+@mixin desktop {
+    @media only screen and (min-width: #{$desktop}) {
+        @content;
+    }
+}

@@ -1,0 +1,51 @@
+.hero {
+    min-height: 24rem;
+    @include background-image('../assets/img/hero.jpg');
+    background-size: cover;
+    color: $color_blanco;
+    display: flex;
+    align-items: center;
+    .contenido-hero {
+        flex: 1;
+        h2 {
+            font-weight: 400;
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: .5rem;
+        }
+        form {
+            position: relative;
+            @include tablet() {
+                width: 40%;
+            }
+            input[type='submit'] {
+                position: absolute;
+                top: 2px;
+                right: 1px;
+                @include background-image('../assets/img/lupa.png');
+                background-position-x: right;
+                height: 2.8rem;
+                width: 3rem;
+                text-indent: -9999px;
+                border: none;
+                cursor: pointer;
+                background-color: white;
+            }
+            input[type='text'] {
+                width: 100%;
+                height: 3rem;
+                transition: all 500ms;
+                -webkit-transition: all 500ms;
+                -moz-transition: all 500ms;
+                -ms-transition: all 500ms;
+                -o-transition: all 500ms;
+            }
+            input[type='text']:hover {
+                @include box-border($color_principal);
+            }
+        }
+    }
+}

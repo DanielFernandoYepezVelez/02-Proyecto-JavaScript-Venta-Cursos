@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    border: solid 1px fuchsia;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+        padding: .5rem 1rem;
+    }
+}
+
+// Ampersan para evitar espacios en blanco
+.carrito-compras {
+    position: relative;
+    margin: 0 1rem;
+    cursor: pointer;
+    border: solid yellow 3px;
+    &:hover .contenido.oculto {
+        display: block;
+        position: absolute;
+        border: 2px green dotted;
+        right: 0;
+        background-color: $color_gris;
+        padding: 1rem;
+        max-width: 400px;
+        img {
+            max-width: 150px;
+        }
+        .boton {
+            @include boton($color_secundario, $color_terciario);
+        }
+    }
+}
+
+.contenido.oculto {
+    display: none;
+}

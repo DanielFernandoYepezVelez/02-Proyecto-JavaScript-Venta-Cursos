@@ -1,0 +1,13 @@
+html {
+    @include box-model(0, 0, border-box);
+}
+
+*,
+*::after,
+*::before {
+    @include box-model(0, 0, inherit);
+}
+
+body {
+    font-family: $fuente_principal;
+}
