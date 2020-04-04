@@ -40,7 +40,7 @@
 
 .contenedor-lista-carrito {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto auto;
     grid-gap: .5rem;
     justify-items: center;
@@ -59,6 +59,9 @@
     }
 }
 
-.vaciar-carrito {
-    margin-top: 1rem;
+.curso-individual {
+    background-color: red;
+    border-radius: 100%;
+    color: $color_blanco;
+    padding: .5rem;
 }
