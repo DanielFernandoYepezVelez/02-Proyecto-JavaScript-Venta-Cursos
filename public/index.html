@@ -31,25 +31,25 @@
 
             <!-- Contenido Carrito Oculto Start -->
             <div class="contenido oculto">
-                <table id="lista-carrito" class="">
-                    <thead>
-                        <tr>
-                            <th>Imagen</th>
-                            <th>Nombre</th>
-                            <th>Precio</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <img src="./assets/img/curso1.jpg" />
-                            </td>
-                            <td>CSS Grid y Flexbox Construye + 10 Proyectos</td>
-                            <td>$15</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <a href="#" class="boton">Vaciar Carrito</a>
+                <div class="contenedor-lista-carrito">
+                    <p>Imagen</p>
+                    <p>Nombre</p>
+                    <p>Precio</p>
+                    <p>Cantidad</p>
+                    <p>Total</p>
+                    <img src="./assets/img/curso1.jpg" />
+                    <p>CSS Grid y Flexbox Construye + 10 Proyectos</p>
+                    <p>$15</p>
+                    <div class="referencia">
+                        <div class="agrupar-cantidad">
+                            <img src="./assets/img/download.svg" alt="img-suma">
+                            <p>5</p>
+                            <img src="./assets/img/download (1).svg" alt="img-resta">
+                        </div>
+                    </div>
+                    <p>$150</p>
+                </div>
+                <a href="#" class="boton vaciar-carrito">Vaciar Carrito</a>
             </div>
             <!-- Contenido Carrito Oculto End -->
 
@@ -110,6 +110,13 @@
                 <div class="precio">
                     <p class="regular">$200</p>
                     <p class="oferta">$15</p>
+                </div>
+                <div>
+                    <figure class="contadores">
+                        <img class="contador-suma" src="./assets/img/download.svg" alt="img-suma">
+                        <p class="contador-visual">5</p>
+                        <img class="contador-resta" src="./assets/img/download (1).svg" alt="img-resta">
+                    </figure>
                 </div>
                 <a href="#" class="boton" data-id="1">Agregar Al Carrito</a>
             </div>
@@ -313,9 +320,11 @@
                 </nav>
             </div>
         </div>
+        <p class="footer-final">&copy; Daniel Fernando Yepez Velez</p>
     </footer>
     <!-- Footer End -->
 
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

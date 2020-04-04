@@ -12,13 +12,16 @@
     position: relative;
     margin: 0 1rem;
     cursor: pointer;
-    &:hover .contenido.oculto {
+    /* &:hover */
+    .contenido.oculto {
         display: block;
         position: absolute;
+        z-index: 1; // Funciona
         right: 0;
         background-color: $color_gris;
         padding: 1rem;
-        max-width: 400px;
+        max-width: /* 400px */
+        auto;
         img {
             max-width: 150px;
         }
@@ -30,4 +33,32 @@
 
 .contenido.oculto {
     display: none;
+}
+
+
+/* Funcionalidad Carrito Compras */
+
+.contenedor-lista-carrito {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: .5rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.referencia {
+    position: relative;
+    .agrupar-cantidad {
+        display: flex;
+        p {
+            position: absolute;
+            top: 6px;
+            left: 27px;
+        }
+    }
+}
+
+.vaciar-carrito {
+    margin-top: 1rem;
 }

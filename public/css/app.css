@@ -58,22 +58,24 @@ body {
   position: relative;
   margin: 0 1rem;
   cursor: pointer;
+  /* &:hover */
 }
 
-.carrito-compras:hover .contenido.oculto {
+.carrito-compras .contenido.oculto {
   display: block;
   position: absolute;
+  z-index: 1;
   right: 0;
   background-color: #f2f2f2;
   padding: 1rem;
-  max-width: 400px;
+  max-width: auto;
 }
 
-.carrito-compras:hover .contenido.oculto img {
+.carrito-compras .contenido.oculto img {
   max-width: 150px;
 }
 
-.carrito-compras:hover .contenido.oculto .boton {
+.carrito-compras .contenido.oculto .boton {
   background-color: #33c3f0;
   padding: 0.8rem 1rem;
   display: block;
@@ -85,6 +87,34 @@ body {
 
 .contenido.oculto {
   display: none;
+}
+
+/* Funcionalidad Carrito Compras */
+.contenedor-lista-carrito {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto auto;
+  grid-gap: .5rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.referencia {
+  position: relative;
+}
+
+.referencia .agrupar-cantidad {
+  display: flex;
+}
+
+.referencia .agrupar-cantidad p {
+  position: absolute;
+  top: 6px;
+  left: 27px;
+}
+
+.vaciar-carrito {
+  margin-top: 1rem;
 }
 
 .hero {
@@ -142,6 +172,9 @@ body {
 .hero .contenido-hero form input[type='text'] {
   width: 100%;
   height: 3rem;
+  border: none;
+  outline: none;
+  padding-left: .5rem;
   transition: all 500ms;
   -webkit-transition: all 500ms;
   -moz-transition: all 500ms;
@@ -315,6 +348,33 @@ body {
   color: green;
 }
 
+.info-curso .contadores {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding-bottom: .3rem;
+}
+
+.info-curso .contadores .contador-suma {
+  margin-right: 1.2rem;
+  cursor: pointer;
+}
+
+.info-curso .contadores .contador-visual {
+  position: absolute;
+  height: 1.5rem;
+  width: 2rem;
+  line-height: 19px;
+  text-align: center;
+  top: 5px;
+  border: solid 0.5px #000000;
+}
+
+.info-curso .contadores .contador-resta {
+  margin-left: 1.2rem;
+  cursor: pointer;
+}
+
 .info-curso .boton {
   background-color: #33c3f0;
   padding: 0.8rem 1rem;
@@ -340,6 +400,13 @@ body {
   .footer .contenedor-footer {
     flex-direction: row;
   }
+}
+
+.footer .footer-final {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.3rem;
+  padding: .5rem;
 }
 
 .menu {
