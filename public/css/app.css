@@ -51,7 +51,7 @@ body {
 }
 
 .header .logo {
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .carrito-compras {
@@ -90,13 +90,27 @@ body {
 }
 
 /* Funcionalidad Carrito Compras */
-.contenedor-lista-carrito {
+/* .contenedor-lista-carrito {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 0.5rem;
+    justify-items: center;
+    align-items: center;
+} */
+.parte-titulos,
+.dom-dinamico {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto auto;
-  grid-gap: .5rem;
+  grid-template-columns: 100px 80px 50px 80px 50px 50px;
+  grid-gap: 0.5rem;
   justify-items: center;
   align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.parte-titulos .img-carrito,
+.dom-dinamico .img-carrito {
+  width: 98px;
 }
 
 .referencia {
@@ -114,10 +128,26 @@ body {
 }
 
 .curso-individual {
-  background-color: red;
+  background-color: #f12626;
   border-radius: 100%;
   color: #ffffff;
-  padding: .5rem;
+  padding: 0.5rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.btn-container #btn-uno {
+  background-color: #f12626;
+  padding: 0.8rem 1rem;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #ffffff;
 }
 
 .hero {

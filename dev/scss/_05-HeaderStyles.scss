@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     .logo {
-        padding: .5rem 1rem;
+        padding: 0.5rem 1rem;
     }
 }
 
@@ -38,13 +38,27 @@
 
 /* Funcionalidad Carrito Compras */
 
-.contenedor-lista-carrito {
+
+/* .contenedor-lista-carrito {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto auto;
-    grid-gap: .5rem;
+    grid-gap: 0.5rem;
     justify-items: center;
     align-items: center;
+} */
+
+.parte-titulos,
+.dom-dinamico {
+    display: grid;
+    grid-template-columns: 100px 80px 50px 80px 50px 50px;
+    grid-gap: 0.5rem;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    .img-carrito {
+        width: 98px;
+    }
 }
 
 .referencia {
@@ -60,8 +74,23 @@
 }
 
 .curso-individual {
-    background-color: red;
+    background-color: rgb(241, 38, 38);
     border-radius: 100%;
     color: $color_blanco;
-    padding: .5rem;
+    padding: 0.5rem;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    #btn-uno {
+        background-color: rgb(241, 38, 38);
+        padding: 0.8rem 1rem;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: $color_blanco;
+    }
 }
