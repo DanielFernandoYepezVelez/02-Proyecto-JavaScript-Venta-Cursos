@@ -6,6 +6,7 @@ let contadorCantidadFinal = 0,
 
 /* Accediendo Al Dom */
 const contenedorCarrito = document.querySelector('.dom-dinamico');
+const btnAgregarCarrito = document.querySelectorAll('[data-id]');
 
 /* Eventos Usuario Y El Sistema */
 eventosUsuario();
@@ -80,32 +81,42 @@ function renderizarLocalStorageDOM(cursosArray) {
     });
 }
 
-/* Funcionalidad Para Obtener El Contador De Los Cursos */
+/* Funcionalidad Para Obtener El Contador De Los Cursos Para Cada Curso */
 function cantidadCursosCompra(e) {
     e.preventDefault();
 
     const hermanoNext = e.target.nextElementSibling;
     const hermanoPrevious = e.target.previousElementSibling;
+    let arrayDataId;
 
     if (e.target.classList.contains('contador-suma')) {
-        hermanoNext.innerHTML = (Number(hermanoNext.textContent) + 1);
-        contadorCantidadFinal = parseInt(hermanoNext.textContent);
-        // contadorCantidadSuma = parseInt(hermanoNext.textContent);
+        arrayDataId = Array.from(btnAgregarCarrito);
+
+        arrayDataId.forEach(function(btn) {
+            if (btn.getAttribute('data-id') === e.target.getAttribute('add-id')) {
+                hermanoNext.innerHTML = (Number(hermanoNext.textContent) + 1);
+                contadorCantidadFinal = parseInt(hermanoNext.textContent);
+            }
+        });
 
     } else if (e.target.classList.contains('contador-resta')) {
+        arrayDataId = Array.from(btnAgregarCarrito);
 
-        if (hermanoPrevious.textContent > 0) {
-            hermanoPrevious.innerHTML = (Number(hermanoPrevious.textContent) - 1);
-            contadorCantidadFinal = parseInt(hermanoPrevious.textContent);
-            // contadorCantidadResta = parseInt(hermanoPrevious.textContent);
+        arrayDataId.forEach(function(btn) {
 
-        } else {
-            window.confirm('Actualmente El Carrito Esta Vacio');
-        }
+            if (btn.getAttribute('data-id') === e.target.getAttribute('rest-id')) {
+                if (hermanoPrevious.textContent > 0) {
+                    hermanoPrevious.innerHTML = (Number(hermanoPrevious.textContent) - 1);
+                    contadorCantidadFinal = parseInt(hermanoPrevious.textContent);
+
+                } else {
+                    window.confirm('Actualmente El Carrito Esta Vacio');
+                }
+            }
+        });
     }
 
-    // console.log(contadorCantidadSuma);
-    // console.log(contadorCantidadResta);
+    console.log(contadorCantidadFinal);
     // return contadorCantidadFinal;
 }
 
@@ -124,8 +135,6 @@ function guardarCursosLocalStorage(e) {
         let valorCompra = precioNumerico * contadorCantidadFinal;
         let suma = e.target.parentElement.parentElement.children[1].children[4].children[0].children[0].src;
         let resta = e.target.parentElement.parentElement.children[1].children[4].children[0].children[2].src;
-
-        return console.log(contadorCantidadFinal);
 
         let cursoObjeto = {
             id,
@@ -146,7 +155,7 @@ function guardarCursosLocalStorage(e) {
         } else {
             cursosArray.forEach(function(curso, index) {
 
-                if (curso.id === cursoObjeto.id) {
+                if (Number(index + 1) === Number(cursoObjeto.id)) {
                     let nuevaCantidadCursos, nuevaCompraCursos;
 
                     nuevaCantidadCursos = (curso.contadorCantidadFinal + cursoObjeto.contadorCantidadFinal);
@@ -159,24 +168,34 @@ function guardarCursosLocalStorage(e) {
                     cursosArray.push(cursoObjeto);
                     localStorage.setItem('cursos', JSON.stringify(cursosArray));
 
-                    console.log('suma', contadorCantidadSuma);
-                    console.log('resta', contadorCantidadResta);
-
                     /* Forma Optimizada Para Eliminar */
                     while (contenedorCarrito.firstElementChild) {
                         contenedorCarrito.removeChild(contenedorCarrito.firstElementChild);
                     }
                     renderizarLocalStorageDOM(cursosArray);
+                    cursoObjeto.contadorCantidadFinal = 0;
+                    contadorCantidadFinal = 0;
 
-                } else {
+                    console.log('Objeto Cantidad', cursoObjeto.contadorCantidadFinal);
+                    console.log('IDs Iguales', contadorCantidadFinal);
+                    return console.log('curso-array', curso.id, 'curso-objeto', cursoObjeto.id);
+
+                } else if (Number(index + 2) >= Number(cursoObjeto.id)) {
                     cursosArray.push(cursoObjeto);
                     localStorage.setItem('cursos', JSON.stringify(cursosArray));
 
-                    /* Forma Optimizada Para Eliminar */
+                    //    /* Forma Optimizada Para Eliminar 
                     while (contenedorCarrito.firstElementChild) {
                         contenedorCarrito.removeChild(contenedorCarrito.firstElementChild);
                     }
+
                     renderizarLocalStorageDOM(cursosArray);
+                    cursoObjeto.contadorCantidadFinal = 0;
+                    contadorCantidadFinal = 0;
+
+                    console.log('Objeto Cantidad', cursoObjeto.contadorCantidadFinal);
+                    console.log('IDs NO Iguales', contadorCantidadFinal);
+                    return console.log('curso-array', curso.id, 'curso-objeto', cursoObjeto.id);
                 }
             });
         }
