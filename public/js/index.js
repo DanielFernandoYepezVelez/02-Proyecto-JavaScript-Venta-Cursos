@@ -135,8 +135,10 @@ function guardarCursosLocalStorage(e) {
         let valorCompra = precioNumerico * contadorCantidadFinal;
         let suma = e.target.parentElement.parentElement.children[1].children[4].children[0].children[0].src;
         let resta = e.target.parentElement.parentElement.children[1].children[4].children[0].children[2].src;
+        let estado = false;
 
         let cursoObjeto = {
+            estado,
             id,
             imagenURL,
             titulo,
@@ -144,112 +146,73 @@ function guardarCursosLocalStorage(e) {
             contadorCantidadFinal,
             valorCompra,
             suma,
-            resta
+            resta,
         }
 
+        sumaID = e.target.previousElementSibling.children[0].children[0].getAttribute('add-id');
+        restaID = e.target.previousElementSibling.children[0].children[2].getAttribute('rest-id');
+        btnID = e.target.getAttribute('data-id');
+
         if (cursosArray.length <= 0) {
+            cursoObjeto.estado = true;
             cursosArray.push(cursoObjeto);
             localStorage.setItem('cursos', JSON.stringify(cursosArray));
             renderizarLocalStorageDOM(cursosArray)
+            cursoObjeto.contadorCantidadFinal = 0;
+            // contadorCantidadFinal = 0;
+            console.log('Se Agrego El Primer Elemento Del Array');
 
-        } else {
+        } else if (cursosArray.length >= 1) {
+
+            /* Esta Logica Aplica Para Los Cursos Que Existen En El Local Storage */
             cursosArray.forEach(function(curso, index) {
-
-                if (Number(index + 1) === Number(cursoObjeto.id)) {
+                /* Aqui se reescribe la cantidad del los cursos que ya existan en el local storage */
+                if ((curso.id === (sumaID && restaID && btnID && cursoObjeto.id)) && curso.estado === true) {
                     let nuevaCantidadCursos, nuevaCompraCursos;
-
-                    nuevaCantidadCursos = (curso.contadorCantidadFinal + cursoObjeto.contadorCantidadFinal);
+                    nuevaCantidadCursos = (curso.contadorCantidadFinal + contadorCantidadFinal);
                     nuevaCompraCursos = (nuevaCantidadCursos * precioNumerico);
 
                     cursoObjeto.contadorCantidadFinal = nuevaCantidadCursos;
                     cursoObjeto.valorCompra = nuevaCompraCursos;
+                    cursoObjeto.estado = true;
 
                     cursosArray.splice(index, 1);
                     cursosArray.push(cursoObjeto);
                     localStorage.setItem('cursos', JSON.stringify(cursosArray));
 
-                    /* Forma Optimizada Para Eliminar */
-                    while (contenedorCarrito.firstElementChild) {
-                        contenedorCarrito.removeChild(contenedorCarrito.firstElementChild);
-                    }
-                    renderizarLocalStorageDOM(cursosArray);
-                    cursoObjeto.contadorCantidadFinal = 0;
-                    contadorCantidadFinal = 0;
-
-                    console.log('Objeto Cantidad', cursoObjeto.contadorCantidadFinal);
-                    console.log('IDs Iguales', contadorCantidadFinal);
-                    return console.log('curso-array', curso.id, 'curso-objeto', cursoObjeto.id);
-
-                } else if (Number(index + 2) >= Number(cursoObjeto.id)) {
-                    cursosArray.push(cursoObjeto);
-                    localStorage.setItem('cursos', JSON.stringify(cursosArray));
-
-                    //    /* Forma Optimizada Para Eliminar 
+                    /* Forma Optimizada Para Eliminar Del DOM*/
                     while (contenedorCarrito.firstElementChild) {
                         contenedorCarrito.removeChild(contenedorCarrito.firstElementChild);
                     }
 
                     renderizarLocalStorageDOM(cursosArray);
                     cursoObjeto.contadorCantidadFinal = 0;
-                    contadorCantidadFinal = 0;
-
-                    console.log('Objeto Cantidad', cursoObjeto.contadorCantidadFinal);
-                    console.log('IDs NO Iguales', contadorCantidadFinal);
-                    return console.log('curso-array', curso.id, 'curso-objeto', cursoObjeto.id);
+                    // contadorCantidadFinal = 0;
+                    console.log('Los ids del array y del elemento son iguales');
                 }
             });
+
+            /* Logica De Agregar Nuevos Cursos Por Fuera Del Ciclo */
+            if (cursoObjeto.estado === false) {
+                cursoObjeto.estado = true;
+                cursosArray.push(cursoObjeto);
+                localStorage.setItem('cursos', JSON.stringify(cursosArray));
+
+                /* Forma Optimizada Para Eliminar */
+                while (contenedorCarrito.firstElementChild) {
+                    contenedorCarrito.removeChild(contenedorCarrito.firstElementChild);
+                }
+
+                renderizarLocalStorageDOM(cursosArray)
+                cursoObjeto.contadorCantidadFinal = 0;
+                // contadorCantidadFinal = 0;
+                console.log('Nuevo');
+            }
         }
-
-        contadorCantidadFinal = 0;
+        // contadorCantidadFinal = 0;
         e.target.previousElementSibling.children[0].children[1].innerHTML = 0;
-
-    } else if (e.target.classList.contains('boton') && contadorCantidadFinal <= 0) {
-        confirm('Debe Ingresar La Cantidad De Cursos, Antes De Agregar Al Carrito');
     }
 }
-
-/* Funcionalidad Para Renderizar Cursos Agregados Al Carrito En El DOM*/
-// function renderizandoCursosDOM(curso) {
-
-//     const img = document.createElement('img');
-//     const titulo = document.createElement('p');
-//     const precio = document.createElement('p');
-//     const divUno = document.createElement('div');
-//     const divDos = document.createElement('div');
-//     const suma = document.createElement('img');
-//     const cantidad = document.createElement('p');
-//     const resta = document.createElement('img');
-//     const total = document.createElement('p');
-//     const remove = document.createElement('p');
-
-//     remove.setAttribute('data-id', `${curso.id}`);
-
-//     img.classList.add('img-carrito');
-//     divUno.classList.add('referencia');
-//     divDos.classList.add('agrupar-cantidad');
-//     remove.classList.add('curso-individual');
-
-//     img.src = `${curso.imagenURL}`;
-//     titulo.innerHTML = `${curso.titulo}`;
-//     precio.innerHTML = `${curso.precioNumerico}`;
-//     suma.src = `${curso.suma}`;
-//     cantidad.innerHTML = `${curso.contadorCantidadFinal}`;
-//     resta.src = `${curso.resta}`;
-//     total.innerHTML = `${curso.valorCompra}`;
-//     remove.innerHTML = 'X';
-
-//     divUno.appendChild(divDos);
-//     divDos.appendChild(suma);
-//     divDos.appendChild(cantidad)
-//     divDos.appendChild(resta);
-
-//     contenedorCarrito.appendChild(img);
-//     contenedorCarrito.appendChild(titulo);
-//     contenedorCarrito.appendChild(precio);
-//     contenedorCarrito.appendChild(divUno);
-//     contenedorCarrito.appendChild(total);
-//     contenedorCarrito.appendChild(remove);
-// }
 
 /* Funcionalidad Para Remover Un Curso Del DOM */
 /* Funciona, pero existen formas mas optimas de ejecutar esta funcionalidad */
@@ -272,7 +235,7 @@ function eliminarCursoDOM(e) {
 
     } else if (e.target.classList.contains('vaciar-carrito')) {
 
-        /* Forma Optimizada De Eliminar */
+        /* Forma Optimizada Para Eliminar Del DOM */
         while (contenedorCarrito.firstElementChild) {
             contenedorCarrito.removeChild(contenedorCarrito.firstElementChild);
         }
