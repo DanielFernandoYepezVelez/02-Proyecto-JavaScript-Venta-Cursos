@@ -1,0 +1,2 @@
+No se puede buscar en un array algo que no existe, primero debes crearlo,
+para despues, filtrarlo, buscarlo, editar o demas, pero son dos logicas diferentes que deben establecersen de forma individual.

@@ -146,7 +146,7 @@ function guardarCursosLocalStorage(e) {
             contadorCantidadFinal,
             valorCompra,
             suma,
-            resta,
+            resta
         }
 
         sumaID = e.target.previousElementSibling.children[0].children[0].getAttribute('add-id');
@@ -157,6 +157,7 @@ function guardarCursosLocalStorage(e) {
             cursoObjeto.estado = true;
             cursosArray.push(cursoObjeto);
             localStorage.setItem('cursos', JSON.stringify(cursosArray));
+
             renderizarLocalStorageDOM(cursosArray)
             cursoObjeto.contadorCantidadFinal = 0;
             // contadorCantidadFinal = 0;
@@ -168,8 +169,10 @@ function guardarCursosLocalStorage(e) {
             cursosArray.forEach(function(curso, index) {
                 /* Aqui se reescribe la cantidad del los cursos que ya existan en el local storage */
                 if ((curso.id === (sumaID && restaID && btnID && cursoObjeto.id)) && curso.estado === true) {
-                    let nuevaCantidadCursos, nuevaCompraCursos;
+                    let nuevaCantidadCursos = 0,
+                        nuevaCompraCursos;
                     nuevaCantidadCursos = (curso.contadorCantidadFinal + contadorCantidadFinal);
+                    //let elementoSuma = Number(e.target.previousElementSibling.children[0].children[1].textContent)
                     nuevaCompraCursos = (nuevaCantidadCursos * precioNumerico);
 
                     cursoObjeto.contadorCantidadFinal = nuevaCantidadCursos;
@@ -209,7 +212,6 @@ function guardarCursosLocalStorage(e) {
                 console.log('Nuevo');
             }
         }
-        // contadorCantidadFinal = 0;
         e.target.previousElementSibling.children[0].children[1].innerHTML = 0;
     }
 }
