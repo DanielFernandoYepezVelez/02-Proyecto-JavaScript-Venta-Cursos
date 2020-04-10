@@ -85,6 +85,16 @@ body {
   color: #ffffff;
 }
 
+.carrito-compras .contenido.oculto .botonComprar {
+  background-color: #33c3f0;
+  padding: 0.8rem 1rem;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
 .contenido.oculto {
   display: none;
 }
@@ -111,6 +121,25 @@ body {
 .parte-titulos .img-carrito,
 .dom-dinamico .img-carrito {
   width: 98px;
+}
+
+.parte-titulos .precio-individual,
+.dom-dinamico .precio-individual {
+  font-weight: bold;
+}
+
+.parte-titulos .container-spinner,
+.dom-dinamico .container-spinner {
+  grid-column: 3 / 4;
+  grid-row: 2 / 4;
+}
+
+.parte-titulos .container-mensaje,
+.dom-dinamico .container-mensaje {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 1rem;
+  font-family: "Raleway", sans-serif;
 }
 
 .referencia {

@@ -19,6 +19,16 @@
     color: $font_color_mixin;
 }
 
+@mixin botonComprar($background_color_mixin, $font_color_mixin) {
+    background-color: $background_color_mixin;
+    padding: 0.8rem 1rem;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: $font_color_mixin;
+}
+
 
 /* Background-Img */
 

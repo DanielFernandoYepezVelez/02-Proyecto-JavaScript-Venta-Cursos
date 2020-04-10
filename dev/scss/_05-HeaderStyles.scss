@@ -28,6 +28,9 @@
         .boton {
             @include boton($color_principal, $color_blanco);
         }
+        .botonComprar {
+            @include botonComprar($color_principal, $color_blanco);
+        }
     }
 }
 
@@ -58,6 +61,19 @@
     margin-bottom: 0.5rem;
     .img-carrito {
         width: 98px;
+    }
+    .precio-individual {
+        font-weight: bold;
+    }
+    .container-spinner {
+        grid-column: 3 / 4;
+        grid-row: 2 / 4;
+    }
+    .container-mensaje {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 1rem;
+        font-family: $fuente_principal;
     }
 }
 
