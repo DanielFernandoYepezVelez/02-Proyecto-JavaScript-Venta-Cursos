@@ -3,6 +3,7 @@ let contadorCantidadFinal = 0,
     renderizar = false;
 
 /* Accediendo Al Dom */
+const logo = document.getElementById('logo');
 const contenedorCarrito = document.querySelector('.dom-dinamico');
 const btnAgregarCarrito = document.querySelectorAll('[data-id]');
 const btnCarritoTotal = document.querySelector('.comprar-carrito');
@@ -12,11 +13,17 @@ const btnVaciarCarrito = document.querySelector('.vaciar-carrito');
 eventosUsuario();
 
 function eventosUsuario() {
+    logo.addEventListener('click', recargarPagina);
     document.addEventListener('DOMContentLoaded', obtenerDatosLocalStorage);
     document.addEventListener('click', cantidadCursosCompra);
     document.addEventListener('click', guardarCursosLocalStorage);
     document.addEventListener('click', eliminarCursoDOM);
     document.addEventListener('click', comprarCursos);
+}
+
+/* Funcionalidad Para Recargar El Web Site */
+function recargarPagina() {
+    location.reload();
 }
 
 /* Funcionalidad Para Obtener Los Datos Del Local Storage */
